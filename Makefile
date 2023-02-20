@@ -5,7 +5,7 @@
 ## at 'http://localhost' with password 'secretpassword'
 .PHONY: help setup up down clean
 
-BBOX := 25,20,35,30
+BBOX := 11,45,12,46
 
 help: ## Print this help
 	@grep -E '^##.*$$' $(MAKEFILE_LIST) | cut -c'4-'
@@ -33,7 +33,7 @@ index: ## 4. Index some data (Change extents with BBOX='<left>,<bottom>,<right>,
 			--bbox='$(BBOX)' \
 			--catalog-href='https://earth-search.aws.element84.com/v0/' \
 			--collections='sentinel-s2-l2a-cogs' \
-			--datetime='2021-06-01/2021-07-01'"
+			--datetime='2015-06-01/2023-07-01'"
 	docker-compose exec -T jupyter bash -c \
 		"stac-to-dc \
 			--catalog-href=https://planetarycomputer.microsoft.com/api/stac/v1/ \
